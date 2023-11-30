@@ -92,3 +92,37 @@ Where Statement
 --SELECT *
 --FROM EmployeeDemographics
 --WHERE FirstName IN ('Anthony', 'Norma')
+
+/*
+GROUP BY, ORDER BY
+*/
+
+--SELECT DISTINCT(Gender)
+--FROM EmployeeDemographics
+
+--SELECT Gender
+--FROM EmployeeDemographics
+--GROUP BY Gender
+
+--SELECT Gender, COUNT(Gender)
+--FROM EmployeeDemographics
+--GROUP BY Gender
+
+--SELECT Gender, Age, COUNT(Gender)
+--FROM EmployeeDemographics
+--GROUP BY Gender, Age
+
+--SELECT Gender, COUNT(Gender)
+--FROM EmployeeDemographics
+--WHERE Age > 31
+--GROUP BY Gender
+
+--SELECT Gender, COUNT(Gender) AS CountGender
+--FROM EmployeeDemographics
+--WHERE Age > 31
+--GROUP BY Gender
+--ORDER BY CountGender DESC
+
+--SELECT *
+--FROM EmployeeDemographics
+--ORDER BY Age DESC, Gender DESC
