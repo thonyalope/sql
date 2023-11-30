@@ -59,3 +59,36 @@ Top, Distinct, Count, As, Max, Min, Avg, *
 
 --SELECT *
 --FROM EmployeeSalary
+
+/*
+Where Statement
+=, <>, <, >, And, Or, Like, Null, Not Null, In
+*/
+
+--SELECT *
+--FROM EmployeeDemographics
+--WHERE Age <= 32 AND GENDER = 'Male'
+
+--SELECT *
+--FROM EmployeeDemographics
+--WHERE Age <= 32 OR GENDER = 'Male'
+
+--SELECT *
+--FROM EmployeeDemographics
+--WHERE LastName LIKE 'S%'
+
+--SELECT *
+--FROM EmployeeDemographics
+--WHERE LastName LIKE '%S%'
+
+--SELECT *
+--FROM EmployeeDemographics
+--WHERE LastName LIKE 'V%s%'
+
+--SELECT *
+--FROM EmployeeDemographics
+--WHERE FirstName IS NOT NULL
+
+--SELECT *
+--FROM EmployeeDemographics
+--WHERE FirstName IN ('Anthony', 'Norma')
