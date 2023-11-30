@@ -147,3 +147,20 @@ INNER JOINS, OUTER JOINS
 --	ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
 --WHERE JobTitle = 'Salesman'
 --GROUP BY JobTitle
+
+/*
+UNION, UNION ALL
+*/
+
+--SELECT *
+--FROM SQL.dbo.EmployeeDemographics
+--UNION ALL
+--SELECT *
+--FROM SQL.dbo.WareHouseEmployeeDemographics
+
+--SELECT EmployeeID, FirstName, Age
+--FROM SQL.DBO.EmployeeDemographics
+--UNION
+--SELECT EmployeeID, JobTitle, Salary
+--FROM SQL.dbo.EmployeeSalary
+--ORDER BY EmployeeID
