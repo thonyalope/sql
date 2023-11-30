@@ -206,3 +206,18 @@ HAVING CLAUSE
 --GROUP BY JobTitle
 --HAVING AVG(Salary) > 45000
 --ORDER BY AVG(SALARY) DESC
+
+/*
+Updating/Deleting Data
+*/
+
+--UPDATE SQL.dbo.EmployeeDemographics
+--SET FirstName = 'Mariangel', LastName = 'Solis'
+--WHERE EmployeeID = 1010
+
+--UPDATE SQL.dbo.EmployeeDemographics
+--SET Age = '22', Gender = 'Female'
+--WHERE EmployeeID = 1010
+
+--DELETE FROM SQL.dbo.EmployeeDemographics
+--WHERE EmployeeID = 1005
