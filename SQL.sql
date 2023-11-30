@@ -187,3 +187,22 @@ CASE
 --	ELSE Salary + (Salary * .03)
 --END AS SalaryAfterRaise
 --FROM SQL.dbo.EmployeeSalary
+
+/*
+HAVING CLAUSE
+*/
+
+--SELECT JobTitle, COUNT(JobTitle)
+--FROM SQL.dbo.EmployeeDemographics
+--JOIN SQL.dbo.EmployeeSalary
+--	on EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
+--GROUP BY JobTitle
+--HAVING COUNT(JobTitle) > 1
+
+--SELECT JobTitle, AVG(Salary)
+--FROM SQL.dbo.EmployeeDemographics
+--JOIN SQL.dbo.EmployeeSalary
+--	on EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
+--GROUP BY JobTitle
+--HAVING AVG(Salary) > 45000
+--ORDER BY AVG(SALARY) DESC
