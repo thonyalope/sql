@@ -126,3 +126,24 @@ GROUP BY, ORDER BY
 --SELECT *
 --FROM EmployeeDemographics
 --ORDER BY Age DESC, Gender DESC
+
+/*
+INNER JOINS, OUTER JOINS
+*/
+
+--SELECT *
+--FROM SQL.dbo.EmployeeDemographics
+--INNER JOIN SQL.dbo.EmployeeSalary
+--	ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
+
+--SELECT EmployeeSalary.EmployeeID, FirstName, LastName, JobTitle, Salary
+--FROM SQL.dbo.EmployeeDemographics
+--FULL OUTER JOIN SQL.dbo.EmployeeSalary
+--	ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
+
+--SELECT JobTitle,AVG(Salary)
+--FROM SQL.dbo.EmployeeDemographics
+--INNER JOIN SQL.dbo.EmployeeSalary
+--	ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
+--WHERE JobTitle = 'Salesman'
+--GROUP BY JobTitle
