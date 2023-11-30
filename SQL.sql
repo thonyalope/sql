@@ -164,3 +164,26 @@ UNION, UNION ALL
 --SELECT EmployeeID, JobTitle, Salary
 --FROM SQL.dbo.EmployeeSalary
 --ORDER BY EmployeeID
+
+/*
+CASE
+*/
+
+--SELECT FirstName, LastName, Age,
+--CASE
+--	WHEN Age > 30 THEN 'Old'
+--	WHEN Age BETWEEN 27 AND 30 THEN 'Young'
+--	ELSE 'Baby'
+--END
+--FROM SQL.dbo.EmployeeDemographics
+--WHERE AGE IS NOT NULL
+--ORDER BY AGE
+
+--SELECT JobTitle, Salary,
+--CASE
+--	WHEN JobTitle = 'Salesman' THEN Salary + (Salary * .10)
+--	WHEN JobTitle = 'Accountant' THEN Salary + (Salary * .05)
+--	WHEN JobTitle = 'HR' THEN Salary + (Salary * .0000001)
+--	ELSE Salary + (Salary * .03)
+--END AS SalaryAfterRaise
+--FROM SQL.dbo.EmployeeSalary
