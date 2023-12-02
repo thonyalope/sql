@@ -324,3 +324,10 @@ String Functions - TRIM, LTRIM, RTRIM
 
 --SELECT EmployeeID, RTRIM(EmployeeID) AS IDTRIM
 --FROM EmployeeErrors
+
+/*
+REPLACE
+*/
+
+--SELECT LastName, REPLACE(LastName, '- Fired', '') AS LastNameFixed
+--FROM EmployeeErrors
