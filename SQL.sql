@@ -35,7 +35,7 @@
 --(1009, 'Accountant', 42000)
 
 /*
-SELECT Statement
+SELECT
 Top, Distinct, Count, As, Max, Min, Avg, *
 */
 
@@ -61,7 +61,7 @@ Top, Distinct, Count, As, Max, Min, Avg, *
 --FROM EmployeeSalary
 
 /*
-Where Statement
+WHERE
 =, <>, <, >, And, Or, Like, Null, Not Null, In
 */
 
@@ -189,7 +189,7 @@ CASE
 --FROM SQL.dbo.EmployeeSalary
 
 /*
-HAVING CLAUSE
+HAVING
 */
 
 --SELECT JobTitle, COUNT(JobTitle)
@@ -232,3 +232,18 @@ Aliasing
 --	ON Demo.EmployeeID = Sal.EmployeeID
 --LEFT JOIN SQL.dbo.WareHouseEmployeeDemographics Ware
 --	ON Demo.EmployeeID = Ware.EmployeeID
+
+/*
+Partition By
+*/
+
+--SELECT FirstName, LastName, Gender, Salary, COUNT(Gender) OVER (PARTITION BY Gender) as TotalGender
+--FROM SQL.EmployeeDemographics dem
+--JOIN SQL.EmployeeSalary sal
+--	ON dem.EmployeeID = sal.EmployeeID
+
+--SELECT Gender, COUNT(Gender)
+--FROM SQL.EmployeeDemographics dem
+--JOIN SQL.EmployeeSalary sal
+--	ON dem.EmployeeID = sal.EmployeeID
+--GROUP BY Gender
