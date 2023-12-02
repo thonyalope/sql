@@ -338,3 +338,13 @@ SUBSTRING
 
 --SELECT SUBSTRING(FirstName, 1, 3)
 --FROM EmployeeErrors
+
+/*
+UPPER and LOWER
+*/
+
+--SELECT FirstName, LOWER(FirstName)
+--FROM EmployeeErrors
+
+--SELECT FirstName, UPPER(FirstName)
+--FROM EmployeeErrors
