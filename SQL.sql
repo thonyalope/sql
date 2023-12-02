@@ -238,13 +238,13 @@ Partition By
 */
 
 --SELECT FirstName, LastName, Gender, Salary, COUNT(Gender) OVER (PARTITION BY Gender) AS TotalGender
---FROM SQL.EmployeeDemographics dem
---JOIN SQL.EmployeeSalary sal
+--FROM SQL.dbo.EmployeeDemographics dem
+--JOIN SQL.dbo.EmployeeSalary sal
 --	ON dem.EmployeeID = sal.EmployeeID
 
 --SELECT Gender, COUNT(Gender)
---FROM SQL.EmployeeDemographics dem
---JOIN SQL.EmployeeSalary sal
+--FROM SQL.dbo.EmployeeDemographics dem
+--JOIN SQL.dbo.EmployeeSalary sal
 --	ON dem.EmployeeID = sal.EmployeeID
 --GROUP BY Gender
 
@@ -256,10 +256,45 @@ CTEs
 --(SELECT FirstName, LastName, Gender, Salary
 --, COUNT(Gender) OVER (PARTITION BY Gender) AS TotalGender
 --, AVG(Salary) OVER (PARTITION BY Gender) AS AVGSalary
---FROM SQL.EmployeeDemographics emp
---FROM SQL.EmployeeSalary sal
+--FROM SQL.dbo.EmployeeDemographics emp
+--FROM SQL.dbo.EmployeeSalary sal
 --	ON emp.EmployeeID = sal.EmployeeID
 --WHERE Salary > '45000'
 --)
 --Select FirstName, AvgSalary
 --FROM CTE_Employee
+
+/*
+Temp Tables
+*/
+
+--CREATE TABLE #temp_Employee (
+--EmployeeID int,
+--JobTitle varchar(100),
+--Salary int
+--)
+
+--INSERT INTO #temp_Employee VALUES (
+--'10001', 'HR', '45000'
+--)
+
+--INSERT INTO #temp_Employee
+--SELECT *
+--FROM SQL.dbo.EmployeeSalary
+
+--CREATE TABLE #temp_Employee2 (
+--JobTitle varchar(50),
+--EmployeesPerJob int,
+--AvgAge int,
+--AvgSalary int
+--)
+
+--INSERT INTO #temp_Employee2
+--SELECT JobTitle, Count(JobTitle), Avg(Age), Avg(Salary)
+--FROM SQL.dbo.EmployeeDemographics emp
+--JOIN SQL.dbo.EmployeeSalary sal
+--	ON emp.EmployeeID = sal.EmployeeID
+--GROUP BY JobTitle
+
+--SELECT *
+--FROM #temp_Employee2
