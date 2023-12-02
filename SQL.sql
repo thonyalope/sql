@@ -358,3 +358,32 @@ Stored Procedures
 --FROM SQL.dbo.EmployeeDemographics
 
 --EXEC TEST
+
+/*
+Subqueries
+*/
+
+--SELECT EmployeeID, Salary, (SELECT AVG(Salary) FROM SQL.dbo.EmployeeSalary) AS AllAvgSalary
+--FROM SQL.dbo.EmployeeSalary
+
+-- How to do it with PARTITION BY
+--SELECT EmployeeID, Salary, AVG(Salary) OVER () AS AllAvgSalary
+--FROM SQL.dbo.EmployeeSalary
+
+-- Why GROUP BY doesn't work
+--SELECT EmployeeID, Salary, AVG(Salary) OVER () AS AllAvgSalary
+--FROM SQL.dbo.EmployeeSalary
+--GROUP BY EmployeeID, Salary
+--ORDER BY 1, 2
+
+-- Subquery in FROM
+--SELECT a.EmployeeID, AllAvgSalary
+--FROM (SELECT EmployeeID, Salary, AVG(Salary) OVER () AS AllAvgSalary
+--	FROM EmployeeSalary) a
+
+--Subquery in WHERE
+--SELECT EmployeeID, JobTitle, Salary
+--FROM EmployeeSalary
+--WHERE EmployeeID IN (
+	--SELECT *
+	--FROM SQL.dbo.EmployeeDemographics)
