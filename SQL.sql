@@ -331,3 +331,10 @@ REPLACE
 
 --SELECT LastName, REPLACE(LastName, '- Fired', '') AS LastNameFixed
 --FROM EmployeeErrors
+
+/*
+SUBSTRING
+*/
+
+--SELECT SUBSTRING(FirstName, 1, 3)
+--FROM EmployeeErrors
