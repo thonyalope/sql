@@ -253,9 +253,9 @@ CTEs
 */
 
 --WITH CTE_Employee AS
---(SELECT FirstName, LastName, Gender, Salary
---, COUNT(Gender) OVER (PARTITION BY Gender) AS TotalGender
---, AVG(Salary) OVER (PARTITION BY Gender) AS AVGSalary
+--(SELECT FirstName, LastName, Gender, Salary,
+--COUNT(Gender) OVER (PARTITION BY Gender) AS TotalGender,
+--AVG(Salary) OVER (PARTITION BY Gender) AS AVGSalary
 --FROM SQL.dbo.EmployeeDemographics emp
 --FROM SQL.dbo.EmployeeSalary sal
 --	ON emp.EmployeeID = sal.EmployeeID
@@ -298,3 +298,29 @@ Temp Tables
 
 --SELECT *
 --FROM #temp_Employee2
+
+/*
+String Functions - TRIM, LTRIM, RTRIM
+*/
+
+--Drop Table EmployeeErrors
+
+--CREATE TABLE EmployeeErrors ( 
+--EmployeeID varchar(50),
+--FirstName varchar(50),
+--LastName varchar(50)
+--)
+
+--INSERT INTO EmployeeErrors VALUES
+--('1001	', 'Luis', 'Mora'),
+--('1002', 'Renan', 'Acevedo'),
+--('1003	', 'Jorge', 'Salas ')
+
+--SELECT EmployeeID, TRIM(EmployeeID) AS IDTRIM
+--FROM EmployeeErrors
+
+--SELECT EmployeeID, LTRIM(EmployeeID) AS IDTRIM
+--FROM EmployeeErrors
+
+--SELECT EmployeeID, RTRIM(EmployeeID) AS IDTRIM
+--FROM EmployeeErrors
