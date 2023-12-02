@@ -237,7 +237,7 @@ Aliasing
 Partition By
 */
 
---SELECT FirstName, LastName, Gender, Salary, COUNT(Gender) OVER (PARTITION BY Gender) as TotalGender
+--SELECT FirstName, LastName, Gender, Salary, COUNT(Gender) OVER (PARTITION BY Gender) AS TotalGender
 --FROM SQL.EmployeeDemographics dem
 --JOIN SQL.EmployeeSalary sal
 --	ON dem.EmployeeID = sal.EmployeeID
@@ -247,3 +247,19 @@ Partition By
 --JOIN SQL.EmployeeSalary sal
 --	ON dem.EmployeeID = sal.EmployeeID
 --GROUP BY Gender
+
+/*
+CTEs
+*/
+
+--WITH CTE_Employee AS
+--(SELECT FirstName, LastName, Gender, Salary
+--, COUNT(Gender) OVER (PARTITION BY Gender) AS TotalGender
+--, AVG(Salary) OVER (PARTITION BY Gender) AS AVGSalary
+--FROM SQL.EmployeeDemographics emp
+--FROM SQL.EmployeeSalary sal
+--	ON emp.EmployeeID = sal.EmployeeID
+--WHERE Salary > '45000'
+--)
+--Select FirstName, AvgSalary
+--FROM CTE_Employee
