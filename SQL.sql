@@ -348,3 +348,13 @@ UPPER and LOWER
 
 --SELECT FirstName, UPPER(FirstName)
 --FROM EmployeeErrors
+
+/*
+Stored Procedures
+*/
+
+--CREATE PROCEDURE TEST AS
+--SELECT *
+--FROM SQL.dbo.EmployeeDemographics
+
+--EXEC TEST
