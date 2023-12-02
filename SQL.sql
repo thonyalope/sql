@@ -221,3 +221,14 @@ Updating/Deleting Data
 
 --DELETE FROM SQL.dbo.EmployeeDemographics
 --WHERE EmployeeID = 1005
+
+/*
+Aliasing
+*/
+
+--SELECT Demo.EmployeeID, Demo.FirstName, Demo.JobTitle, Sal.Age, Ware.Age
+--FROM SQL.dbo.EmployeeDemographics Demo
+--LEFT JOIN SQL.dbo.EmployeeSalary Sal
+--	ON Demo.EmployeeID = Sal.EmployeeID
+--LEFT JOIN SQL.dbo.WareHouseEmployeeDemographics Ware
+--	ON Demo.EmployeeID = Ware.EmployeeID
