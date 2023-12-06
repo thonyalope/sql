@@ -29,14 +29,14 @@ ORDER BY 1,2
 --Countries with Highest Infection Rate compared to Population
 SELECT location, population, MAX(total_cases) AS HighestInfectionCount, Max((total_cases/population))*100 AS PercentPopulationInfected
 FROM dbo.CovidDeaths
---Where location like '%states%'
+--WHERE location LIKE '%states%'
 GROUP BY location, population
 ORDER BY PercentPopulationInfected DESC
 
 --Countries with Highest Death Count per Population
 SELECT location, MAX(cast(total_deaths AS INT)) AS TotalDeathCount
 FROM dbo.CovidDeaths
---Where location like '%states%'
+--WHERE location LIKE '%states%'
 WHERE continent IS NOT NULL
 GROUP BY location
 ORDER BY TotalDeathCount DESC
@@ -44,7 +44,15 @@ ORDER BY TotalDeathCount DESC
 --Showing contintents with the highest death count per population
 SELECT continent, MAX(cast(total_deaths AS INT)) AS TotalDeathCount
 FROM dbo.CovidDeaths
---Where location like '%states%'
+--WHERE location LIKE '%states%'
 WHERE continent IS NOT NULL
 GROUP BY continent
 ORDER BY TotalDeathCount DESC
+
+--Global numbers
+SELECT SUM(new_cases) AS total_cases, SUM(CAST(new_deaths AS INT)) AS total_deaths, SUM(CAST(new_deaths as int))/SUM(new_cases)*100 as DeathPercentage
+FROM dbo.CovidDeaths
+--WHERE location LIKE '%states%'
+WHERE continent IS NOT NULL 
+--GROUP BY date
+ORDER BY 1,2
