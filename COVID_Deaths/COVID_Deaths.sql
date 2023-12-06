@@ -19,3 +19,9 @@ FROM dbo.CovidDeaths
 WHERE location LIKE '%states%'
 AND continent IS NOT NULL
 ORDER BY 1,2
+
+-- Total Cases vs Population
+SELECT location, date, population, total_cases, (total_cases/population)*100 AS PercentPopulationInfected
+FROM dbo.CovidDeaths
+WHERE location LIKE '%states%'
+ORDER BY 1,2
