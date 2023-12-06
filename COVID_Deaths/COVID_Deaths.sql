@@ -23,5 +23,12 @@ ORDER BY 1,2
 -- Total Cases vs Population
 SELECT location, date, population, total_cases, (total_cases/population)*100 AS PercentPopulationInfected
 FROM dbo.CovidDeaths
-WHERE location LIKE '%states%'
+--WHERE location LIKE '%states%'
 ORDER BY 1,2
+
+-- Countries with Highest Infection Rate compared to Population
+SELECT location, population, MAX(total_cases) as HighestInfectionCount, Max((total_cases/population))*100 AS PercentPopulationInfected
+FROM dbo.CovidDeaths
+--Where location like '%states%'
+GROUP BY location, population
+oRDER BY PercentPopulationInfected DESC
