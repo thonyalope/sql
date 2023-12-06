@@ -35,8 +35,16 @@ ORDER BY PercentPopulationInfected DESC
 
 --Countries with Highest Death Count per Population
 SELECT location, MAX(cast(total_deaths AS INT)) AS TotalDeathCount
-From PortfolioProject..CovidDeaths
+FROM dbo.CovidDeaths
 --Where location like '%states%'
 WHERE continent IS NOT NULL
 GROUP BY location
+ORDER BY TotalDeathCount DESC
+
+--Showing contintents with the highest death count per population
+SELECT continent, MAX(cast(total_deaths AS INT)) AS TotalDeathCount
+FROM dbo.CovidDeaths
+--Where location like '%states%'
+WHERE continent IS NOT NULL
+GROUP BY continent
 ORDER BY TotalDeathCount DESC
