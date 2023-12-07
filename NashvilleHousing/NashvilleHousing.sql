@@ -137,3 +137,10 @@ ORDER BY PropertyAddress
 
 SELECT *
 FROM dbo.NashvilleHousing
+
+-- Delete Unused Columns
+SELECT *
+FROM dbo.NashvilleHousing
+
+ALTER TABLE dbo.NashvilleHousing
+DROP COLUMN OwnerAddress, TaxDistrict, PropertyAddress, SaleDate
